@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:gdsc/Animation/animator.dart';
 import 'package:gdsc/Screens/authentication_screens/login_screen.dart';
 import 'package:gdsc/Screens/authentication_screens/signup_screen.dart';
-import 'package:gdsc/Screens/authentication_screens/widgets/gdsc_dmce.dart';
-import 'package:gdsc/Screens/authentication_screens/widgets/gdsc_text.dart';
+import 'package:gdsc/widgets/bubble.dart';
+import 'package:gdsc/widgets/gdsc_dmce.dart';
+import 'package:gdsc/widgets/gdsc_text.dart';
 import 'package:gdsc/Screens/authentication_screens/widgets/lrp_button.dart';
 import 'package:gdsc/constants.dart';
 
@@ -19,109 +21,87 @@ class WelcomeScreen extends StatelessWidget {
         body: Stack(
           alignment: Alignment.center,
           children: [
-            Positioned(
+            Bubble(
               top: -58,
               right: -24,
-              child: Center(
-                child: Container(
-                    width: height(context) * .21,
-                    height: height(context) * .21,
-                    decoration: BoxDecoration(
-                      color:
-                          const Color.fromRGBO(8, 169, 71, 0.3700000047683716),
-                      borderRadius: BorderRadius.all(Radius.elliptical(
-                          height(context) * .21, height(context) * .21)),
-                    )),
-              ),
+              opacity: 0.3700000047683716,
+              r: 8,
+              g: 169,
+              b: 71,
+              size: height(context) * .21,
             ),
-            Positioned(
+            Bubble(
               top: 0,
               right: -89,
-              child: Container(
-                width: height(context) * .22,
-                height: height(context) * .22,
-                decoration: BoxDecoration(
-                  color: const Color.fromRGBO(31, 133, 250, 0.4000000059604645),
-                  borderRadius: BorderRadius.all(Radius.elliptical(
-                      height(context) * .22, height(context) * .22)),
-                ),
-              ),
+              opacity: 0.4000000059604645,
+              r: 31,
+              g: 133,
+              b: 250,
+              size: height(context) * .22,
             ),
             Positioned(
               top: height(context) * .18,
               child: const GDSC_DMCE(),
             ),
             Positioned(
-              bottom: height(context) * .25,
+              top: height(context) * .48,
               child: SizedBox(
                 width: width(context) * .75,
-                height: height(context) * .23,
+                height: 160,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
+                    const Text(
                       'Let’s get started!!',
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: const Color.fromRGBO(13, 52, 60, 1),
-                        fontSize: width(context) * .045,
-                        fontWeight: FontWeight.normal,
+                        color: Color.fromRGBO(13, 52, 60, 1),
+                        fontSize: 17.28,
+                        fontWeight: FontWeight.w600,
                         height: 1,
                       ),
                     ),
-                    const SizedBox(height: 25),
+                    const SizedBox(height: 20),
                     LRPButton(
-                      height: height(context) * .058,
+                      height: 41.6,
                       bgColor: const Color(0xff0F0E47),
                       btnName: 'LOG IN',
                       function: () {
-                        Navigator.pushNamed(context, LoginScreen.id);
+                        Navigator.of(context).push(
+                            Animator().leftToRightSN(const LoginScreen()));
                       },
                     ),
-                    const SizedBox(height: 25),
+                    const SizedBox(height: 15),
                     LRPButton(
-                      height: height(context) * .058,
+                      height: 41.6,
                       bgColor: const Color(0xff1F85FA),
                       btnName: 'REGISTER',
                       function: () {
-                        Navigator.pushNamed(context, SignUpScreen.id);
+                        Navigator.of(context).push(
+                            Animator().leftToRightSN(const SignUpScreen()));
                       },
                     ),
                   ],
                 ),
               ),
             ),
-            Positioned(
+            Bubble(
               bottom: height(context) * 0.033,
               left: -45,
-              child: Container(
-                width: height(context) * 0.17,
-                height: height(context) * 0.17,
-                decoration: BoxDecoration(
-                  color: const Color.fromRGBO(254, 182, 0, 0.38999998569488525),
-                  borderRadius: BorderRadius.all(
-                    Radius.elliptical(
-                        height(context) * 0.17, height(context) * 0.17),
-                  ),
-                ),
-              ),
+              opacity: 0.38999998569488525,
+              r: 254,
+              g: 182,
+              b: 0,
+              size: height(context) * 0.17,
             ),
-            Positioned(
+            Bubble(
               left: -23,
               bottom: -54,
-              child: Container(
-                width: height(context) * .24,
-                height: height(context) * .24,
-                decoration: BoxDecoration(
-                  color: const Color.fromRGBO(252, 42, 36, 0.33000001311302185),
-                  borderRadius: BorderRadius.all(
-                    Radius.elliptical(
-                      height(context) * .24,
-                      height(context) * .24,
-                    ),
-                  ),
-                ),
-              ),
+              opacity: 0.33000001311302185,
+              r: 252,
+              g: 42,
+              b: 36,
+              size: height(context) * .24,
             ),
             const GDSC_Text(),
           ],

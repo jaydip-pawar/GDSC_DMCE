@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:gdsc/Screens/authentication_screens/welcome_screen.dart';
-import 'package:gdsc/Screens/authentication_screens/widgets/gdsc_dmce.dart';
-import 'package:gdsc/Screens/authentication_screens/widgets/gdsc_text.dart';
+import 'package:gdsc/widgets/gdsc_dmce.dart';
+import 'package:gdsc/widgets/gdsc_text.dart';
 
 class SplashScreen extends StatefulWidget {
   static const String id = 'splash-screen';
