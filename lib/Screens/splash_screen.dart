@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:gdsc/Screens/authentication_screens/welcome_screen.dart';
+import 'package:gdsc/Screens/welcome_screen.dart';
 import 'package:gdsc/widgets/gdsc_dmce.dart';
 import 'package:gdsc/widgets/gdsc_text.dart';
 

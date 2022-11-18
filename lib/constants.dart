@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gdsc/Screens/authentication_screens/login_screen.dart';
 import 'package:gdsc/Screens/authentication_screens/signup_screen.dart';
-import 'package:gdsc/Screens/authentication_screens/welcome_screen.dart';
+import 'package:gdsc/Screens/welcome_screen.dart';
 import 'package:gdsc/Screens/splash_screen.dart';
 
 double width(BuildContext context) {
